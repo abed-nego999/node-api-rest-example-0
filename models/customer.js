@@ -7,7 +7,7 @@ var customerSchema = new mongoose.Schema({
     likes: { type: Number }
 });
 customerSchema.methods.darLike = function () {
-    console.log(`Uh, me dieron like. Ya tengo ${ this.likes } likes`);
+    return `Uh, me dieron like. Ya tengo ${ this.likes } likes`;
 }
 
 module.exports = mongoose.model('Customer', customerSchema);

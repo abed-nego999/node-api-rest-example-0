@@ -31,7 +31,7 @@ router.get('/darLike', (req, res) => {
     if (err) {
       res.send(`Error en find customers: ${ err }`);
     } else {
-      customers.forEach((customer) => customer.darLike);
+      customers.forEach((customer) => res.send(`${ customer.darLike() }<br>`));
     }
   });
 });
