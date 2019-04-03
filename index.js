@@ -31,7 +31,8 @@ router.get('/darLike', (req, res) => {
     if (err) {
       res.send(`Error en find customers: ${ err }`);
     } else {
-      customers.forEach((customer) => res.send(`${ customer.darLike(() => console.log("Se ha actualizado un registro")) }<br>`));
+      //customers.forEach((customer) => res.send(`${ customer.darLike(() => console.log("Se ha actualizado un registro")) }<br>`));
+      customers.forEach((customer) => res.send(`${ customer }<br>`));
     }
   });
 });
