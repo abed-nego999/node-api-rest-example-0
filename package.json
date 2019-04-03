@@ -1,0 +1,19 @@
+{
+  "name": "api-rest-example-0",
+  "version": "1.0.0",
+  "description": "Un ejemplo de API REST con node y Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abed-nego999/node-api-rest-example-0.git"
+  },
+  "author": "Esteban Saugar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abed-nego999/node-api-rest-example-0/issues"
+  },
+  "homepage": "https://github.com/abed-nego999/node-api-rest-example-0#readme"
+}
