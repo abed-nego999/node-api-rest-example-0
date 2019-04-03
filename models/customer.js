@@ -6,9 +6,11 @@ var customerSchema = new mongoose.Schema({
     nacimiento: { type: Date },
     likes: { type: Number }
 });
-customerSchema.methods.darLike = function () {
-    this.likes += 1;
-    return `Uh, me dieron like. Ya tengo ${ this.likes } likes`;
+customerSchema.methods.darLike = function (callback) {
+    var query = { _id: this._id };
+    var nuevosLikes = this.likes += 1;
+    this.constructor.update({ _id: this._id }, { likes: nuevosLikes }, callback);
+    return `Uh, me dieron like. Ya tengo ${ nuevosLikes } likes`;
 }
 
 module.exports = mongoose.model('Customer', customerSchema);
