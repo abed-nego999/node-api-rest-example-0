@@ -3,7 +3,7 @@ var express = require("express"),
     bodyParser  = require("body-parser"),
     methodOverride = require("method-override"),
     mongoose = require('mongoose'),
-    customers = require('./models/customer.js');
+    customerModel = require('./models/customer.js');
 
 const PORT = process.env.PORT || 3000
 
@@ -13,7 +13,19 @@ app.use(methodOverride());
 
 var router = express.Router();
 
-router.get('/', (req, res) => res.send("Hello World!"));
+router.get('/', (req, res) => {
+  res.send("Hello World!");
+});
+
+router.get('/obtener', (req, res) => {
+  customerModel.find((err, customers) => {
+    if (err) {
+      res.send(`Error en find customers: ${ err }`);
+    } else {
+      res.send(`Resultado de find: ${ customers }`);
+    }
+  });
+});
 
 app.use(router);
 mongoose.connect("mongodb+srv://cluster0-f3avm.mongodb.net/test?authSource=admin",
@@ -24,12 +36,5 @@ mongoose.connect("mongodb+srv://cluster0-f3avm.mongodb.net/test?authSource=admin
     }
     app.listen(PORT, () => {
       console.log(`Node server running on http://localhost:${ PORT }`);
-      customers.find((err, results) => {
-        if (err) {
-          console.log(`Error en find customers: ${ err }`);
-        } else {
-          console.log(`Resultado de find: ${ results }`);
-        }
-      });
     });
   });
