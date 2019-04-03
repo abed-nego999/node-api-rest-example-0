@@ -7,7 +7,7 @@ var customerSchema = new mongoose.Schema({
     likes: { type: Number }
 });
 customerSchema.methods.darLike = function () {
-    yhis.likes += 1;
+    this.likes += 1;
     return `Uh, me dieron like. Ya tengo ${ this.likes } likes`;
 }
 
