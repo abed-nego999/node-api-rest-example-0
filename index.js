@@ -12,12 +12,12 @@ app.use(methodOverride());
 
 var router = express.Router();
 
-router.get('/', function(req, res) {
-   res.send("Hello World!");
-});
+router.get('/', (req, res) => res.send("Hello World!"));
 
 app.use(router);
-
-app.listen(PORT, function() {
-  console.log(`Node server running on http://localhost:${ PORT }`);
+mongoose.connect("mongodb+srv://cluster0-f3avm.mongodb.net/test", (err, res) => {
+  if (err) {
+    console.log(`ERROR: connecting to Database. ${ err }`);
+  }
+  app.listen(PORT, () => console.log(`Node server running on http://localhost:${ PORT }`));
 });
