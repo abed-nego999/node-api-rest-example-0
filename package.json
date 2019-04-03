@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/abed-nego999/node-api-rest-example-0#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.4.21"
   }
 }
