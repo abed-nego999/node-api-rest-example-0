@@ -38,7 +38,7 @@ router.get('/darLike', (req, res) => {
 
 app.use(router);
 mongoose.connect("mongodb+srv://cluster0-f3avm.mongodb.net/test?authSource=admin",
-  {user: "admin", pass: "vsusm,mqlc999"},
+  {user: "admin", pass: "admin1234"},
   (err, res) => {
     if (err) {
       console.log(`ERROR: connecting to Database. ${ err }`);
