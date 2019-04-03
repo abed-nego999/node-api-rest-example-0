@@ -26,6 +26,15 @@ router.get('/obtener', (req, res) => {
     }
   });
 });
+router.get('/darLike', (req, res) => {
+  customerModel.find((err, customers) => {
+    if (err) {
+      res.send(`Error en find customers: ${ err }`);
+    } else {
+      customers.forEach((customer) => res.send(`${ customer.darLike }<br>`));
+    }
+  });
+});
 
 app.use(router);
 mongoose.connect("mongodb+srv://cluster0-f3avm.mongodb.net/test?authSource=admin",
