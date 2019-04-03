@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/abed-nego999/node-api-rest-example-0/issues"
   },
-  "homepage": "https://github.com/abed-nego999/node-api-rest-example-0#readme"
+  "homepage": "https://github.com/abed-nego999/node-api-rest-example-0#readme",
+  "dependencies": {}
 }
